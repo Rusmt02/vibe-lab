@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vibe Lab — маленькая интерактивная лаборатория настроения." />
+  <title>Vibe Lab — настрой своё настроение</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Vibe Lab — наверх">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>vibe lab</span>
+    </a>
+    <span class="header-note">a tiny mood machine <span class="dot"></span></span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">your current atmosphere</p>
+        <h1>Собери<br /><em>свою волну.</em></h1>
+        <p class="intro">Выбери состояние, подкрути интенсивность и посмотри, как меняется пространство вокруг.</p>
+        <a class="scroll-cue" href="#mixer"><span>↓</span> start mixing</a>
+      </div>
+      <div class="orb-stage" aria-label="Визуализация выбранного настроения">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orb" id="orb"><span class="orb-shine"></span></div>
+        <div class="orb-caption"><span class="live-dot"></span><span id="orbLabel">soft focus</span></div>
+      </div>
+    </section>
+
+    <section class="mixer" id="mixer">
+      <div class="section-heading">
+        <span class="section-index">01</span>
+        <div><p class="kicker">choose a signal</p><h2>Что звучит<br />сегодня?</h2></div>
+      </div>
+      <div class="mood-grid" role="group" aria-label="Выберите настроение">
+        <button class="mood-card active" data-mood="focus" type="button"><span class="mood-symbol">◒</span><strong>Soft focus</strong><small>тихий фокус</small></button>
+        <button class="mood-card" data-mood="spark" type="button"><span class="mood-symbol">✦</span><strong>Bright spark</strong><small>искра внутри</small></button>
+        <button class="mood-card" data-mood="drift" type="button"><span class="mood-symbol">≈</span><strong>Slow drift</strong><small>плыть по течению</small></button>
+        <button class="mood-card" data-mood="rush" type="button"><span class="mood-symbol">↗</span><strong>Good rush</strong><small>вперёд и выше</small></button>
+      </div>
+    </section>
+
+    <section class="intensity">
+      <div class="section-heading compact">
+        <span class="section-index">02</span>
+        <div><p class="kicker">turn it up</p><h2>Громкость<br />ощущения</h2></div>
+      </div>
+      <div class="slider-wrap">
+        <div class="slider-labels"><span>subtle</span><output id="intensityValue">64%</output><span>full send</span></div>
+        <input id="intensity" type="range" min="10" max="100" value="64" aria-label="Интенсивность настроения" />
+        <div class="slider-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="quote" id="quote">«Сегодня достаточно сделать одну вещь — внимательно.»</div>
+    </section>
+
+    <section class="footer-cta">
+      <p class="kicker">keep this feeling</p>
+      <h2>Пусть день<br /><span>подстроится.</span></h2>
+      <button class="reset-button" id="reset" type="button">начать заново <span>↻</span></button>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>VIBE LAB / 2024</span><span>made for the in-between moments</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
